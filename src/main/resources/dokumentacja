@@ -1,0 +1,140 @@
+//dodawanie przykladowych obiektow JSON do bazy danych
+http://localhost:8080/samplerestapp/rest/hardware 
+POST
+{
+"name" : "Radeon",
+"category" : "graphics",
+"priceMin" : "200",
+"priceMax" : "400"
+}
+{
+"name" : "Gigabyte",
+"category" : "graphics",
+"priceMin" : "400",
+"priceMax" : "600"
+}
+{
+"name" : "MSI",
+"category" : "graphics",
+"priceMin" : "400",
+"priceMax" : "600"
+}
+{
+"name" : "Intel",
+"category" : "mainboards",
+"priceMin" : "300",
+"priceMax" : "500"
+}
+{
+"name" : "Asus",
+"category" : "mainboards",
+"priceMin" : "400",
+"priceMax" : "700"
+}
+{
+"name" : "MSI",
+"category" : "mainboards",
+"priceMin" : "500",
+"priceMax" : "700"
+}
+{
+"name" : "Gigabyte",
+"category" : "graphics",
+"priceMin" : "400",
+"priceMax" : "600"
+}
+{
+"name" : "Toshiba",
+"category" : "discs",
+"priceMin" : "150",
+"priceMax" : "400"
+}
+{
+"name" : "Seagate",
+"category" : "discs",
+"priceMin" : "200",
+"priceMax" : "500"
+}
+{
+"name" : "WD",
+"category" : "discs",
+"priceMin" : "200",
+"priceMax" : "800"
+}
+{
+"name" : "OCZ",
+"category" : "ram",
+"priceMin" : "150",
+"priceMax" : "400"
+}
+{
+"name" : "OCZ",
+"category" : "ram",
+"priceMin" : "400",
+"priceMax" : "900"
+}
+{
+"name" : "Goodram",
+"category" : "ram",
+"priceMin" : "150",
+"priceMax" : "400"
+}
+
+//wyswietlanie wszystkich obiektow z bazy danych
+http://localhost:8080/samplerestapp/rest/hardware 
+GET
+
+//wyswietlanie obiektu o podanym id z bazy danych
+http://localhost:8080/samplerestapp/rest/hardware/{id} 
+GET
+
+//modyfikacja obiektem JSON istniejacego rekordu w bazie danych
+http://localhost:8080/samplerestapp/rest/hardware/{id} 
+PUT
+{
+"name" : "modified",
+"category" : "modified",
+"priceMin" : "0",
+"priceMax" : "0"
+}
+
+//wyswietlenie przedmiotow w przedziale cenowym od zadanej ceny minimalnej do 
+//maksymalnej
+http://localhost:8080/samplerestapp/rest/hardware/find/{priceMin}/{priceMax} 
+GET
+
+//wyswietlenie przedmiotu o podanej nazwie
+http://localhost:8080/samplerestapp/rest/hardware/find/{name}
+GET
+
+//wyswietlenie kart graficznych
+http://localhost:8080/samplerestapp/rest/hardware/find/graphics
+GET
+
+//wyswietlenie plyt glownych
+http://localhost:8080/samplerestapp/rest/hardware/find/mainboards
+GET
+
+//wyswietlenie dyskow
+http://localhost:8080/samplerestapp/rest/hardware/find/discs
+GET
+
+wyswietlenie pamieci RAM
+http://localhost:8080/samplerestapp/rest/hardware/find/ram
+GET
+
+//dodanie komentarza do przedmiotu o podanym id
+http://localhost:8080/samplerestapp/rest/hardware/comment/{id}
+POST
+{
+"comment" : "przykladowy komentarz"
+}
+
+//wyswietlenie komentarzy przedmiotu o podanym id
+http://localhost:8080/samplerestapp/rest/hardware/comment/{id}
+GET
+
+//usuniecie komentarzy do przedmiotu o podanym id
+http://localhost:8080/samplerestapp/rest/hardware/comment/{id}
+DELETE
+
